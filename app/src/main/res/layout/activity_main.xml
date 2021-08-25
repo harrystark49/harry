@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_btn"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+    </androidx.appcompat.widget.SearchView>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/search_btn"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints"></ListView>
+
+    <TableLayout
+        android:id="@+id/tbLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/listView"
+        android:stretchColumns="0,1,2,3"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            >
+            <TextView android:text="pid"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="5dp"
+                >
+            </TextView>
+            <TextView android:text="name"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="5dp"
+                >
+            </TextView>
+            <TextView android:text="age"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="5dp"
+                >
+            </TextView>
+            <TextView android:text="gender"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="5dp">
+            </TextView>
+        </TableRow>
+
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            >
+            <TextView android:text="5"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="5dp"
+                >
+            </TextView>
+            <TextView android:text="harrystark"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="5dp"
+                >
+            </TextView>
+            <TextView android:text="21"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="5dp"
+                >
+            </TextView>
+            <TextView android:text="M"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="5dp">
+            </TextView>
+        </TableRow>
+
+    </TableLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView2"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="317dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:navGraph="@navigation/navigation"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
